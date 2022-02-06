@@ -9,5 +9,5 @@ const router = express.Router();
 // home page
 router.get('/', userController.getIndex);
 
-
+router.get('/import_page', userController.getImportPage);
 module.exports = router;
