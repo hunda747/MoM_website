@@ -7,5 +7,9 @@ exports.getIndex = (req, res, next) => {
   });
 };
 
-
+exports.getImportPage = (req, res, next) => {
+  res.render('shop/import', {
+    path: '/import'
+  });
+}
 
