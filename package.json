@@ -1,0 +1,25 @@
+{
+  "name": "mom-website",
+  "version": "1.0.0",
+  "description": "official website for ministry of mineral",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hunda747/MoM_website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hunda747/MoM_website/issues"
+  },
+  "homepage": "https://github.com/hunda747/MoM_website#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
