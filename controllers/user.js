@@ -12,4 +12,9 @@ exports.getImportPage = (req, res, next) => {
     path: '/import'
   });
 }
+exports.getExportPage = (req, res, next) => {
+  res.render('shop/export', {
+    path: '/export'
+  });
+}
 
