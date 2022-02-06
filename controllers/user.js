@@ -17,4 +17,8 @@ exports.getExportPage = (req, res, next) => {
     path: '/export'
   });
 }
-
+exports.getOverview = (req, res, next) => {
+  res.render('shop/overview', {
+    path: '/overview'
+  });
+}
