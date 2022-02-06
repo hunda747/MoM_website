@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="../../public/css/index.css">
+<style>
+    .mySlides {display:none;}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <link rel="stylesheet" href="../../public/css/product.css">
+    <link rel="stylesheet" href="../../public/css/dropdown.css">
+</head>
+<body>
+    <header >
+        <nav id="main-nav">
+          <div class="containers">
+            <div>
+              <a href="/"><img src="http://www.mom.gov.et/wp-content/uploads/2021/10/momlogo.jpg" alt="NewsGrid" class="logo"></a>
+            </div>
+            <div>
+              <ul>
+                <li><a class="<%= path === '/' ? 'current' : '' %>" href="/">Home</a></li>
+                <li>
+                  <div class="dropdown">
+                    <span>Register</span>
+                    <div class="dropdown-content">
+                     <p><a href="/import_page">Import</a></p>
+                     <p><a href="/export_page">Export</a></p>
+                    </div>
+                  </div>
+                </li>
+                <li><a class="<%= path === '/overview' ? 'current' : '' %>" href="/overview">Overview</a></li>
+                <li><a class="<%= path === '/mining_licensing' ? 'current' : '' %> " href="/mining_licensing">Licensing </a>
+                </li>
+                <li><a class="<%= path === '/regulation' ? 'current' : '' %> " href="/regulation">Regulation </a>
+                </li>
+                <!-- and Legislations -->
+                <li><a class="<%= path === '/gemstones' ? 'current' : '' %>" href="/gemstones">Gemstones</a></li>
+                <li><a class="<%= path === '/contact_us' ? 'current' : '' %> " href="/contact_us">contact us</a>
+                </li>
+        
+                <!-- <li><a class="<%= path === '/adminLogin' ? 'current' : '' %>" href="/login">Login</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+	 <main>
+         <div class="showcasess">
+            <img class="mySlides" src="../../public/photo/stone.jpg">
+            <img class="mySlides" src="../../public/photo/gemstone.jpg">
+            <img class="mySlides" src="../../public/photo/desert.jpg">
+            <img class="mySlides" src="../../public/photo/mom2.jpg">
+            
+        </div>
+        
+        <div class="info">
+            <h2 class="top">Welcome to Ethiopian mining</h4>
+            <p class="description">The goal of the Mining website is to provide an electronic platform for user to make a request to import or export minerals.</p>
+            <div class="orange">
+                <h4>Registration for importing and exporting minerals </h4>
+                <p class="description">
+                    Please fill out the form carefully. Enter your address correctly. The response will be sent to you with the email address you provided. 
+                </p>
+                <div class="forms">
+                    <a href="/import_page" class="btn">Import</a>
+                    <a href="/export_page" class="btn">Export</a>
+                </div>
+            </div>
+        </div>     
+        
+	</main>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 4000); // Change image every 2 seconds
+        }
+        </script>
+
+</body>
+</html>
+
+
