@@ -22,3 +22,9 @@ exports.getOverview = (req, res, next) => {
     path: '/overview'
   });
 }
+exports.getLogin = (req, res, next) => {
+  res.render('admin/adminLogin', {
+    path: '/adminLogin',
+    message: ''
+  });
+}
