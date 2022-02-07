@@ -38,7 +38,6 @@ exports.getUser = async(req, res, next) => {
     res.render('admin/adminLogin', {message: "invalid password"} )
   }
   else{
-
     const request =await Request.fetchNew();
     console.log(request[0]);
     res.render('admin/request', {req: request[0]});
@@ -55,12 +54,6 @@ exports.getRequest = async(req, res, next) => {
              status: request[0].status});
 }
 
-
-
-
-
-
-
 exports.getProduct = (req, res, next) => {
   const reqId = req.params.requestId;
 
@@ -72,7 +65,6 @@ exports.getProduct = (req, res, next) => {
   })
   .catch(err => console.log(err));
 }
-
 
 
 function encrypt(text) {
