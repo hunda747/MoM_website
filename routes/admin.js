@@ -10,6 +10,10 @@ const authorize = require('../middlewares/authorize');
 
 const router = express.Router();
 
+router.post('/history', adminController.getHistory)
+
+router.get('/history/:requestId', adminController.getHistoryDetail);
+
 router.get('/login', adminController.getLogin);
 
 router.post('/adminLogin', adminController.getUser);

@@ -74,6 +74,24 @@ function encrypt(text) {
   return { iv: iv.toString('hex'), encryptedData: encrypted.toString('hex') };
   // return encrypted.toString('hex');
  }
+
+
+ exports.getHistoryDetail = (req, res, next) => {
+  const reqId = req.params.requestId;
+
+  Request.findById(reqId)
+  .then(([row, fieldData]) => {
+    res.render('admin/history-detail', {
+      request: row[0]
+    });
+  })
+  .catch(err => console.log(err));
+}
+
+exports.getHistory = async(req, res, next) => {
+  const request =await Request.fetchAll();
+  res.render('admin/history', {req: request[0]});
+}
  
 function decrypt(text) {
   let iv = Buffer.from(text.iv, 'hex');
