@@ -88,6 +88,18 @@ function encrypt(text) {
   .catch(err => console.log(err));
 }
 
+exports.getProduct = (req, res, next) => {
+  const reqId = req.params.requestId;
+
+  Request.findById(reqId)
+  .then(([row, fieldData]) => {
+    res.render('admin/request_detail', {
+      request: row[0]
+    });
+  })
+  .catch(err => console.log(err));
+}
+
 exports.getHistory = async(req, res, next) => {
   const request =await Request.fetchAll();
   res.render('admin/history', {req: request[0]});

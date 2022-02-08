@@ -12,6 +12,8 @@ const router = express.Router();
 
 router.post('/history', adminController.getHistory)
 
+router.post('/request-detail', adminController.getEmail);
+
 router.get('/history/:requestId', adminController.getHistoryDetail);
 
 router.get('/login', adminController.getLogin);
