@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="../../public/css/adminNav.css">
+<link rel="stylesheet" href="../../public/css/report.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script> -->
+  <!-- <script src="../../public/js/Chart.js"></script> -->
+<%- include('../includes/admin-head.ejs') %>
+
+</head>
+<body>
+	<%- include('../includes/admin-navigation.ejs') %>
+	<main class="row">
+		<div class="card_side col-4" style="width: 18rem;">
+			<div class="card-header">
+				Report
+			</div>
+			<ul class="list-group list-group-flush">
+				<a href="/report">
+					<li class="list-group-item">
+						Request type
+					</li>
+				</a>
+				<a href="/reportCountry">
+					<li class="list-group-item">
+					Import and Export country
+				 </li>
+			</a>
+			</ul>
+		</div>
+		<div class="report_side col-8">
+			<div class="graph">
+				<div class="">
+					 <h2 class="">Request type distribution</h2>
+				 <canvas id="barChart" ></canvas>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!-- <%- include('../includes/user-footer.ejs') %> -->
+	
+	<script>
+		jQuery(document).ready(function() {
+ 		var chartDiv = $("#barChart");
+		var datas = "<%= type%>";
+		console.log("datas: " + datas);
+ 		// const da = adminController.getr();
+ 		// console.log("char"+da);
+ 		var myChart = new Chart(chartDiv, {
+ 		 	type: 'pie',
+ 		 	data: {
+ 		  labels: ["Lignite", "Opal", "Oil", "Aluminium ores", "others"],
+ 		  datasets: [
+ 		  {
+ 		  	data: datas,
+ 		  	backgroundColor: [
+ 		   		"#FF6384",
+ 		   		"#4BC0C0",
+ 		   		"#FFCE56",
+ 		   		"#E7E9ED",
+ 		   		"#36A2EB"
+ 		    ]
+ 		  }]
+ 		 	},
+ 		  options: {
+ 		    title: {
+ 		      display: true,
+ 		      text: 'Pie Chart'
+ 		    },
+ 		  	responsive: false,
+ 		  	maintainAspectRatio: false,
+ 		  }
+ 		});
+});
+	</script>
+</body>
+</html>
+
