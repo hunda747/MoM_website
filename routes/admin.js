@@ -30,7 +30,7 @@ router.get('/api/request/:requestId', authorize.verifyToken, apiAdminController.
 
 router.post('/api/respond/:id/:message', authorize.verifyToken, apiAdminController.getEmail);
 
-
+router.get('/report', adminController.getReport)
 
 
 
