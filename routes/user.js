@@ -11,6 +11,7 @@ router.get('/', userController.getIndex);
 router.get('/export_page', userController.getExportPage);
 router.get('/import_page', userController.getImportPage);
 router.get('/overview', userController.getOverview);
+router.get('/regulation', userController.getRegulation);
 router.get('/login', userController.getLogin);
 
 module.exports = router;
