@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="../../public/css/adminNav.css
+">
+<%- include('../includes/admin-head.ejs') %>
+
+</head>
+<body>
+	<%- include('../includes/admin-navigation.ejs') %>
+	<main>
+		<div class="main-container">
+			<div class="cards">					
+				<% if (req.length > 0) { %>
+					<p class="title boldCap">List of request</p>
+					<% for (let request of req) { %>
+					
+					<div class="card">
+						<div class="card-header boldCap">
+							<%= request.req_type%>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title caps"><%= request.first_name %> <%= request.sir_name %></h5>
+							<h3 class="card-textcaps caps"><%= request.mineral_name %></h3>
+							<p class="card-text"><%= request.description  %></p>
+							<a href="/request/<%= request.id %>" class="btn btn-primary">RESPONDE</a>
+						</div>
+					</div>
+					<p></p>
+					<% } %>
+				<% } else { %>
+					<p>No new request</p>
+				<% } %>
+			</div>
+		</div>
+	</main>
+	<!-- <footer>
+		<div class="bottom-footer">
+				<div class="container">
+						<div class="row">
+								<div class="col bottom-meta">
+										<div class="bottom-copyright">
+												Copyright © 2020 All Right Reserved. The Ministry of Mines and Petroleum (MoMP).<br>    
+										</div>
+										<a></a>
+								</div>
+								<div class="col">
+										
+								</div>
+								<div class="col bottom-social">
+										Designed By <a href="https://cornerstone-technology.com">Cornerstone Technology</a>            
+								</div>
+						</div>
+				</div>
+		</div>
+</footer> -->
+	<%- include('../includes/user-footer.ejs') %>
+</body>
+</html>
+
+
