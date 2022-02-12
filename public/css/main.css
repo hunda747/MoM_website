@@ -48,8 +48,8 @@ form {
 }
 
 #main-nav .logo {
-  width: 120px;
-  height: 100%;
+  width: 140px;
+  height: 80%;
 }
 
 #main-nav ul {
@@ -68,7 +68,7 @@ form {
 }
 
 #main-nav .current {
-  border-bottom: 1px solid #f8b029e6;
+  border-bottom: 1px solid #ffd890e6;
 }
 
 #main-nav ul li a:hover {
