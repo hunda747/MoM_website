@@ -10,7 +10,7 @@
 
 .menus .menu{
   padding: 1rem;
-  background-color: white;
+  background-color: black;
 }
 .menus .menu:hover{
   background-color: cornflowerblue;
