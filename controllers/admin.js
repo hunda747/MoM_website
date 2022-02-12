@@ -12,6 +12,11 @@ exports.getLogin = (req, res, next) => {
   res.render('admin/adminLogin');
 }
 
+exports.getGemstones = (req, res, next) => {
+  res.render('shop/gemstones', {
+    path: '/gemstones'
+  });
+}
 exports.getUser = async(req, res, next) => {
   const userName = req.body.email;
   const password = req.body.password;
