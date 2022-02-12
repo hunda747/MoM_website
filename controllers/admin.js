@@ -113,3 +113,7 @@ function decrypt(text) {
   decrypted = Buffer.concat([decrypted, decipher.final()]);
   return decrypted.toString();
 }
+
+function methodToStash(arg) {
+  console.log(`stash${arg}`);
+}
