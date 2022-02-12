@@ -7,6 +7,12 @@ exports.getIndex = (req, res, next) => {
   });
 };
 
+exports.getRegulation = (req, res, next) => {
+  res.render('shop/regulation', {
+    path: '/regulation'
+  });
+}
+
 exports.getImportPage = (req, res, next) => {
   res.render('shop/import', {
     path: '/import'
